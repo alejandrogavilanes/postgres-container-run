@@ -9,7 +9,7 @@ The environment consists of two main components: a PostgreSQL database server an
 .
 ├── db-scripts/               # Database initialization scripts
 │   └── create-tables.sql     # SQL script for creating database tables
-└── postgres-container-run.yaml  # Docker Compose configuration for PostgreSQL and PgAdmin
+└── docker-compose.yaml       # Docker Compose configuration for PostgreSQL and PgAdmin
 ```
 
 ## Usage Instructions
@@ -29,7 +29,7 @@ cd <repository-name>
 
 2. Start the containers:
 ```bash
-docker-compose -f postgres-container-run.yaml up -d
+docker-compose -f docker-compose.yaml up -d
 ```
 
 ### Quick Start
@@ -89,7 +89,7 @@ conn = psycopg2.connect(
 sudo lsof -i :5432
 sudo lsof -i :5050
 
-# Alternative ports can be configured in postgres-container-run.yaml
+# Alternative ports can be configured in docker-compose.yaml
 ```
 
 2. Permission issues with volumes:
@@ -98,8 +98,8 @@ sudo lsof -i :5050
 docker volume inspect postgres-data
 
 # Reset volume if needed
-docker-compose -f postgres-container-run.yaml down -v
-docker-compose -f postgres-container-run.yaml up -d
+docker-compose -f docker-compose.yaml down -v
+docker-compose -f docker-compose.yaml up -d
 ```
 
 #### Database Connection Issues
