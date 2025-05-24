@@ -6,5 +6,6 @@ digraph INFRA {
 (Docker::Container)", shape =rectangle ];
   "postgres-data" [ label = "postgres-data
 (Docker::Volume)", shape =cylinder, fillcolor = "#FFF5CD" ];
+  "container-pg" -> "postgres-data";
   "container-pgadmin" -> "container-pg";
 }
