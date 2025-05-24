@@ -1,0 +1,10 @@
+digraph INFRA {
+  node [ color = "black", fillcolor = "#E6E6E6", height =1, style = "filled,bold,rounded", fontname = "Arial" ];
+  "container-pg" [ label = "container-pg
+(Docker::Container)", shape =cylinder, fillcolor = "#FFCFB3" ];
+  "container-pgadmin" [ label = "container-pgadmin
+(Docker::Container)", shape =rectangle ];
+  "postgres-data" [ label = "postgres-data
+(Docker::Volume)", shape =cylinder, fillcolor = "#FFF5CD" ];
+  "container-pgadmin" -> "container-pg";
+}
